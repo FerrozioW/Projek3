@@ -423,6 +423,9 @@ style main_menu_version:
 ## The scroll parameter can be None, or one of "viewport" or "vpgrid". When
 ## this screen is intended to be used with one or more children, which are
 ## transcluded (placed) inside it.
+image mainmenu_b = im.MatrixColor("images/mainmenu.png", im.matrix.brightness(+0.2))
+image about_b = im.MatrixColor("images/about.png", im.matrix.brightness(+0.2))
+image preference_b = im.MatrixColor("images/preference.png", im.matrix.brightness(+0.2))
 
 screen game_menu(title, scroll=None, yinitial=0.0):
 
@@ -438,7 +441,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
         hbox:
 
-            ## Reserve space for the navigation section.
+            # Reserve space for the navigation section.
             frame:
                 style "game_menu_navigation_frame"
 
@@ -478,8 +481,21 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
-    use navigation
-
+    imagebutton:
+        align (0.05,0.8)
+        idle "images/mainmenu.png"
+        hover "mainmenu_b"
+        action MainMenu()
+    imagebutton:
+        align (0.05,0.5)
+        idle "images/about.png"
+        hover "about_b"
+        action ShowMenu("about")
+    imagebutton:
+        align (0.05,0.2)
+        idle "images/preference.png"
+        hover "preference_b"
+        action ShowMenu("preferences")
     textbutton _("Return"):
         style "return_button"
 
@@ -564,13 +580,13 @@ screen about():
         vbox:
 
             label "[config.name!t]"
-            text _("Version [config.version!t]\n")
+            text _("Version Beta\n")
 
             ## gui.about is usually set in options.rpy.
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("Made with {a=https://www.renpy.org/}RenPoi.care{/a} [renpy.version_only].\n\nTo include the adult patch, you can click {a=https://www.youtube.com/watch?v=QtBDL8EiNZo}here{/a} ")
 
 
 style about_label is gui_label
@@ -748,9 +764,9 @@ screen preferences():
                 vbox:
                     style_prefix "check"
                     label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
+                    #textbutton _("Unseen Text") action Preference("skip", "toggle")
                     textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    #textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.

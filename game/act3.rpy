@@ -1,7 +1,7 @@
 
 #back to the present
 label act3:
-    #play bgm
+    play music bgm3
     scene field with dissolve
     show pio_a at show_char_bawah_ke_atas(0.0):
         xalign -0.4
@@ -13,10 +13,9 @@ label act3:
     pi "It's ok [persistent.name]-Chan"
     pi "Once the war is over, you can try as many times as you can"
     s "Thanks, [pio]-Chan"
-    play music  run
+    voice  run
     "(someone is approaching)"
     nul "Heyy Guyyys!"
-    stop music
     show pf_a:
         subpixel True
         xalign 2.6 yalign 0.0 alpha 0
@@ -118,6 +117,7 @@ label act3:
     pfu "No, Ma'am!"
     b "Good! that is for today's meeting"
     b "You are allowed to leave"
+    stop music fadeout 1.0
     play sound se002
     hide brigadefuhrer_a
     "Officer-Chan has left the meeting session"

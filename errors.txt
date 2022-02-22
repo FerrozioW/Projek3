@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/act5.rpy", line 160: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    eased 2.0 xalign 0.5 yalign 0.3
-              ^
+File "game/screens.rpy", line 480: expected a keyword argument, colon, or end of line.
+    image mainmenu_b = im.MatrixColor("images/mainmenu.png", im.matrix.brightness(+0.2))
+                     ^
 
 Ren'Py Version: Ren'Py 7.4.10.2178
-Tue Feb 22 00:40:35 2022
+Tue Feb 22 21:03:39 2022

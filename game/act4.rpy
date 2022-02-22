@@ -1,6 +1,7 @@
 #back to the past again
 label act4:
     #play bgm
+    play music bgm2
     show room with dissolve
     su "Today is the day of the art school entrance exam"
     su "Better be going fast"
@@ -58,6 +59,7 @@ label act4:
     show blank with hpunch
     atr "Get out!!"
     show blank with hpunch
+    stop music fadeout 1.0
     su "[sob] [sob] [sob] [sob] [sob] [sob]"
     su "Maybe I'm not suited to be a painter [sob] [sob] [sob]"
     su "If only this is Siracusa where I can bribe to get in"

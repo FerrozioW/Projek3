@@ -35,7 +35,7 @@ label act5:
     pfu "{i}What will it take just to find that special day? ~~~{/i}"
     stop music fadeout 1.0
 
-    #play music here
+    play music bgm5
     scene cockpit with dissolve
     pi "What's wrong, [persistent.name]-chan"
     pfu "Why are you stopping the machine"
@@ -186,6 +186,7 @@ label act5:
     centered "{w= 1.0}{nw}"
     play sound tank_destroyed
     show normal_t34_b as normal_t34_a
+    stop music fadeout 2.0
     centered "{w=1.5}{nw}"
     pi "What is that??"
     pfu "Finally she has arrived"

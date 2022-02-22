@@ -1,6 +1,7 @@
 #finale
 
 label act6:
+    play music bgm6
     scene black
     voice type
     centered "{color=#ffffff}Around the same time, Northen Front....{/color}"
@@ -87,7 +88,7 @@ label act6:
     show bullet :
         subpixel True
         xalign 0.3 yalign 0.5 alpha 0.0
-        ease  0.5 xalign 0.8 alpha 1.0
+        ease  0.5 xalign 0.8 yalign 0.7 alpha 1.0
         "bullet_deflect"
         ease 0.4  xalign 1.5 yalign -1.0 alpha 1.0
     play sound firing volume 0.5
@@ -97,13 +98,14 @@ label act6:
     s "Shiit, We're done for!"
     show bullet_reversed:
         subpixel True
-        xalign 0.7 yalign 0.5 alpha 0.0
-        ease 0.5 xalign 0.2 alpha 1
+        xalign 0.7 yalign 0.57 alpha 0.0
+        ease 0.5 xalign 0.1 alpha 1
         "explosion"
-        ease 0.7 zoom 4.0 xalign -0.6
+        zoom 4.0 xalign -0.6
     voice tank_destroyed
     window hide
     pause 2.0
+    stop music fadeout 1.0
     scene  black
     centered "{w=2}{color=#ffffff}..............{/color}"
     show blank with hpunch
@@ -130,6 +132,8 @@ label act6:
     s "Oh come on! GTA VI will only be released after the death of Queen Elizabeth II"
     pi "Just give it up! She will never die since she is an immortal being"
     pfu "Guess you were right"
+    s "[tank], sorry for not able giving the best for you"
+    s "Sorry for not being a good owner"
     s "Girls! thank you for being my friends"
     s "And Mom, I apologize for not being a good daughter"
     scene black

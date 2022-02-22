@@ -4,6 +4,7 @@ label act2:
     scene black with ImageDissolve("tr-clockwipe",3,ramplen = 123)
     voice type
     centered "{color=#ffffff}5 years ago{/color}"
+    play music bgm2 fadein 2.0
     show classroom:
         subpixel True
         zoom 1.5 xalign 0.1 alpha 0.0
@@ -62,7 +63,8 @@ label act2:
     show house with dissolve
     su "Let's get Inside"
     scene livingroom with dissolve
-    show suzuran_a at show_char_bawah_ke_atas (0.8)
+    show suzuran_a at show_char_bawah_ke_atas (0.8):
+        xalign 0.5
     m "Welcome Home my child!"
     su "I'm home"
     c "Good afternoon Suzuran-san"
@@ -77,7 +79,8 @@ label act2:
     voice type
     centered "{color=#ffffff} 5 hours later {/color}"
     scene room with dissolve
-    show cherino_a at show_char_bawah_ke_atas (0.0)
+    show cherino_a at show_char_bawah_ke_atas (0.0):
+        xalign 0.5
     su "Wow we finally beat the game"
     c "It sure is tiresome to clear all the possible route"
     su "The plot is very good though, the storyline is just awesome and unpredictable"
@@ -94,7 +97,8 @@ label act2:
     hide cherino_a
     play sound se002
     scene livingroom with dissolve
-    show suzuran_a at show_char_bawah_ke_atas
+    show suzuran_a at show_char_bawah_ke_atas:
+        xalign 0.5
     m "Leaving already, Cherino-chan??"
     c "Yes I am. Moreover, it is late already!"
     m "Indeed it is, but tomorrow is a holiday. Why don't you stay over for tonight?"
@@ -102,12 +106,15 @@ label act2:
     m "Oh..  Okay then!"
     m "[persistent.name] !! Make sure you walk Cherino-Chan to home!"
     su "Okay Mom!"
+    stop music fadeout 2.0
     hide suzuran_a
     scene road with dissolve
-    show cherino_a at show_char_bawah_ke_atas (0.0)
+    show cherino_a at show_char_bawah_ke_atas (0.0):
+        xalign 0.5
     su "Cherino-Chan. Thanks for today!"
     hide cherino_a
     scene cherino_smile with dissolve
+    play music bgm2_2
     c "[persistent.name]-Chan. Thank you for all this time"
     c "Thank you for being my first and only best friend"
     su "What are you talking about...{w=1} Why are you talking like that??"
@@ -119,7 +126,8 @@ label act2:
     su "Just tell me what happened??{w=1} What is the reason of your behavior just now?"
     c "[persistent.name]-Chan. I had to go back to the federation tomorrow"
     scene road with dissolve
-    show cherino_a at show_char_bawah_ke_atas (0.0)
+    show cherino_a at show_char_bawah_ke_atas (0.0):
+        xalign 0.5
     show blank with hpunch
     su ".{w=0.5}.{w=0.5}.{w=0.5} Why so sudden??"
     c "My father was a victim of {i}The Great Purge{/i}. He was charged for treason and found guilty"
@@ -135,7 +143,7 @@ label act2:
     c "I'm sorry [persistent.name]-Chan. I can't keep the promise"
     hide cherino_a
     scene black with ImageDissolve("tr-clockwipe",1,ramplen = 123)
-    play music run
+    voice run
     centered "{color=#ffffff}[persistent.name] can't cope with the situation. Then proceeds to run away{/color}"
     scene road with dissolve
     show blank with hpunch
@@ -148,10 +156,10 @@ label act2:
     su "BUT YOU LIE!!![sob][sob][sob] YOU LIEE!!!! [sob][sob][sob]"
     play sound se002
     scene livingroom with dissolve
-    show suzuran_a at show_char_bawah_ke_atas (0.5)
+    show suzuran_a at show_char_bawah_ke_atas (0.5):
+        xalign 0.5
     m "My lovely child, what's wrong??"
     su "[sob][sob][sob][sob][sob][sob][sob][sob][sob]"
-    stop music fadeout 1.0
     play sound se002
     scene room with dissolve
     su "[sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob][sob]"
@@ -177,6 +185,7 @@ label act2:
     m "Whatever happens you are still my cute child that I know"
     m "So..{w=1}Make sure to wish her a safe trip"
     su "O-{w=0.5}Okay mom"
+    stop music fadeout 2.0
     scene black
     voice type
     centered "{color=#ffffff}And that was the last time I met her"

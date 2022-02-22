@@ -6,6 +6,10 @@ $pio = "Pioneer"
 $pf = "Spotter"
 $bf = "Officer"
 
+#no cheating
+define config.hard_rollback_limit = 0
+init python:
+    _game_menu_screen = "preferences"
 #define karakter
 define nul = Character("???")
 define c = Character("{i}Cherino-Chan{/i}",image = "cherino")
@@ -52,11 +56,13 @@ transform show_char_kanan_ke_kiri(x = 0.5):
 # The game starts here.
 
 label start:
+
     stop music
-    #play bgm
     scene black
     voice type
+    $quick_menu = False
     centered "{color=#ffffff}11 Mar 1943, in a small town named Kharkov{/color}"
+    play music bgm1 fadein 2.0
     show field:
         subpixel True
         xalign 0.1 alpha 0.0
@@ -88,8 +94,8 @@ label start:
         s "Let's just name her Cunnie, it's a good name"
         $tank = "Cunnie"
     elif "suzuran"  in temp_tank:
-        s "That is very similar to my mother's name!, it's not my name"
-        s "I just remembered, I am Suzurina"
+        s "Who would use their mother's name to name a tank"
+        s "Let's just name her Cunnie, it's a good name"
         $tank = "Cunnie"
     s "Hmmm... Something is wrong with [tank]"
     s "It's just doesn't feel good when I drive her"
@@ -157,7 +163,7 @@ label start:
             ease 1.2 zoom 0.8   alpha 0.4
             ease 0.9 zoom 0.86  alpha 0.7
             repeat
-    play music welding
+    play sound welding
     s "On the meantime, I should change to more comfortable clothing"
     show lisa_b:
         subpixel True
@@ -183,7 +189,7 @@ label start:
     hide repair
     hide repair2
     hide repair3
-    stop music fadeout 1.0
+    stop sound
     pi "It's done"
     show lisa_b:
         subpixel True
@@ -225,50 +231,7 @@ label start:
     pi "Wait! What?"
     su "Strange isn't it!"
     su "It is a long story though"
+    stop music fadeout 2.0
     jump act2
-
-    #show tiger_a at show_char_kiri_ke_kanan(x = 0.0):
-        #yalign 1.0
-    show bullet_reversed :
-        subpixel True
-        xalign 2.0 yalign 0.6 alpha 0.0
-        ease  0.5 xalign 0.4 alpha 1.0
-        "explosion"
-
-    centered "{w=0.5}{nw}"
-    #show explosion as bullet
-    hide tiger_a
-    hide bullet_reversed
-    #show burning:
-        #subpixel True
-    voice tank_destroyed
-    show smoke:
-        xalign 0.42 yalign 0.6 zoom 0.1 alpha 1
-        ease 0.08 zoom 1.0 xalign 0.0 alpha 0.9
-        ease 8.0 xalign -0.4 alpha 0
-
-    show tiger_b behind smoke:
-        subpixel True
-        xalign 0.0
-        yalign 1.0
-    centered "{w=2}{nw}"
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-
-
-    # These display lines of dialogue.
-
-    b "Die You Bitch"
-    hide smoke
-    hide tiger_b
-    show gri_a:
-        align (0.5,0.0)
-
-    b "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
 
     return
