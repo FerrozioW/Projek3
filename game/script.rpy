@@ -21,8 +21,10 @@ define atr = Character("{i}Art School Instructor{/i}")
 define gt = Character ("{i}Guards-Chan{/i}",image = "gri")
 define st = Character ("{i}Shock Troops-Chan{/i}",image = "shock")
 define ti = Character ("{i}Tiger crew-Chan{/i}",image = "tiger")
+define w = Character("{i}The White Panzer{/i}")
 #dekralasi image
-image rain = Movie(fps=30, size=(1280, 720), channel='movie', play='rain.mpg', mask='rain.mpg', mask_channel=None, loop=True)
+image danger = Movie(fps=30, size=(1280, 720), channel='movie', play='danger.mpg', mask='danger.mpg', loop=True)
+image rain = Movie(fps=30, size=(1280, 720), channel='movie', play='rain.mpg', mask='rain.mpg', loop=True)
 image repair2 = "effect_tank/repair.png"
 image repair3 = "effect_tank/repair.png"
 image arrow_reversed = im.Flip("arrow.png",vertical = "True")
