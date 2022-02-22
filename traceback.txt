@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/act5.rpy", line 222, in script
+    jump act6
+ScriptError: could not find label 'act6'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/act5.rpy", line 222, in script
+    jump act6
+  File "renpy/ast.py", line 1757, in execute
+    rv = renpy.game.script.lookup(target)
+  File "renpy/script.py", line 918, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'act6'.
+
+Windows-10-10.0.19041
+Ren'Py 7.4.10.2178
+The Last Panzer 
+Tue Feb 22 01:17:57 2022
